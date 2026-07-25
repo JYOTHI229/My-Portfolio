@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap');
+
+.experience {
+  position: relative;
+  background: transparent;
+  color: var(--text-color);
+  padding: 120px 20px;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Animated Glow Background */
+.experienceGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--secondary-color, rgba(0,255,255,0.15)), transparent 60%);
+  transform: translate(-50%, -50%);
+  filter: blur(80px);
+  opacity: 0;
+  animation: expGlowPulse 6s infinite ease-in-out;
+}
+
+.experience.active .experienceGlow {
+  opacity: 1;
+}
+
+/* Content Container */
+.experienceContent {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Title */
+.experienceTitle {
+  font-size: 3rem;
+  font-family: "Orbitron", sans-serif;
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-40px);
+}
+
+.experienceTitle span {
+  color: var(--secondary-color);
+}
+
+.experience.active .experienceTitle {
+  animation: expTitleDrop 1s forwards;
+}
+
+/* Animated line */
+.experienceLine {
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--secondary-color));
+  margin: 25px auto 45px;
+}
+
+.experience.active .experienceLine {
+  animation: expExpandLine 1s forwards 0.6s;
+}
+
+/* Experience Cards List */
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Glassmorphism Card */
+.experienceCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid var(--secondary-color);
+  border-radius: 12px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(30px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experienceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 255, 255, 0.1);
+}
+
+.experience.active .experienceCard {
+  animation: expFadeUp 0.9s forwards 0.8s;
+}
+
+/* Card Header */
+.experienceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.companyTitle {
+  font-size: 1.35rem;
+  font-family: "Orbitron", sans-serif;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.roleTitle {
+  font-size: 1.05rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.experienceMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.badge {
+  background: rgba(0, 255, 255, 0.1);
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-family: "Orbitron", sans-serif;
+}
+
+.location {
+  font-size: 0.9rem;
+  color: #a0aec0;
+}
+
+/* Bullets List */
+.experienceBullets {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.experienceBullets li {
+  position: relative;
+  padding-left: 25px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 12px;
+}
+
+.experienceBullets li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.experienceBullets li:last-child {
+  margin-bottom: 0;
+}
+
+.ExperienceDivider {
+  width: 60px;
+  height: 3px;
+  background: var(--secondary-color);
+  margin: 50px auto 0;
+  border-radius: 2px;
+}
+
+/* Animations */
+@keyframes expTitleDrop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expExpandLine {
+  to {
+    width: 120px;
+  }
+}
+
+@keyframes expFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expGlowPulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.15); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .experienceTitle {
+    font-size: 2.3rem;
+  }
+
+  .experienceHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experienceMeta {
+    align-items: flex-start;
+  }
+
+  .companyTitle {
+    font-size: 1.15rem;
+  }
+
+  .experienceBullets li {
+    font-size: 0.92rem;
+  }
+}

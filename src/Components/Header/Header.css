@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@500;700&display=swap');
+
+.header {
+  margin-top: 100px;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Profile Container */
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Profile Image */
+.profilePic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid #FFD700;
+  object-fit: cover;
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.9);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.profilePic:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 45px rgba(255, 215, 0, 1);
+}
+
+/* Name */
+.name {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.gradientText {
+  background: linear-gradient(90deg, #00ffff, #ff00ff, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Tagline */
+.tagline {
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #00ffff;
+  margin-top: 6px;
+}
+
+/* Social Links */
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 35px 0;
+}
+
+.socialIcon {
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+}
+
+/* Brand Colors */
+.socialIcon.github {
+  color: #fff;
+}
+.socialIcon.github:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.9);
+}
+
+.socialIcon.linkedin {
+  color: #0A66C2;
+}
+.socialIcon.linkedin:hover {
+  background: #0A66C2;
+  color: #fff;
+  box-shadow: 0 0 18px rgba(10, 102, 194, 0.9);
+}
+
+.socialIcon.leetcode {
+  color: #FFA116;
+}
+.socialIcon.leetcode:hover {
+  background: #FFA116;
+  color: #000;
+  box-shadow: 0 0 18px rgba(255, 161, 22, 0.9);
+}
+
+
+
+/* Scroll Down Indicator */
+.scrollDown {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.6rem;
+  color: #00ffff;
+  animation: bounce 2s infinite;
+}
+
+
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-12px); }
+  60% { transform: translateX(-50%) translateY(-6px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profilePic { width: 140px; height: 140px; }
+  .name { font-size: 2.8rem; }
+  .tagline { font-size: 1.25rem; }
+  .socialIcon { width: 50px; height: 50px; font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .profilePic { width: 120px; height: 120px; }
+  .name { font-size: 2.2rem; }
+  .tagline { font-size: 1.05rem; }
+  .socialIcon { width: 44px; height: 44px; font-size: 1.7rem; }
+}

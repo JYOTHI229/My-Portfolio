@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap');
+
+.contact {
+  background-color: transparent;
+  color: var(--text-color); 
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+.contact .title {
+  font-size: 2.5rem;
+  color: var(--accent); 
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Split Section */
+.contactSplit {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Contact Info */
+.contactInfo {
+  max-width: 450px;
+  text-align: left;
+}
+
+.introText {
+  font-size: 1rem;
+  color: var(--text-color); 
+  margin-bottom: 20px;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards 0.3s;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInRight 0.6s forwards;
+}
+
+.contactItem:nth-child(2) { animation-delay: 0.5s; }
+.contactItem:nth-child(3) { animation-delay: 0.7s; }
+.contactItem:nth-child(4) { animation-delay: 0.9s; }
+
+.contactIcon {
+  font-size: 1.5rem;
+  color: var(--secondary-color); 
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contactItem a {
+  color: var(--accent); 
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactItem:hover .contactIcon {
+  transform: scale(1.2);
+  color: var(--accent);
+}
+
+.contactItem a:hover {
+  color: var(--secondary-color);
+}
+
+
+.contactDivider {
+  width: 60px;
+  height: 3px;
+  background: var(--secondary-color);
+  margin: 40px auto 0;
+  border-radius: 2px;
+}
+
+/* Fade-in Animations */
+.fade-in { opacity: 0; transform: translateY(30px); animation: fadeInUp 0.8s forwards; }
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+
+@media (max-width: 768px) {
+  .contactSplit { flex-direction: column; align-items: center; gap: 25px; }
+  .contactInfo { max-width: 90%; }
+}

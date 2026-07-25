@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap');
+
+.skills {
+  background:transparent; 
+  color: #fff;
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.skills .title {
+  font-size: 2.5rem;
+  color: #FFD700;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+
+.skillsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Individual Skill Card */
+.skillCard {
+  background: #1E1E1E; 
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 6px 15px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.skillCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 255, 255, 0.3);
+}
+
+/* Skill Header */
+.skillHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.skillHeader h3 {
+  font-size: 1.3rem;
+  color: #00FFFF; /* Neon cyan */
+}
+
+.skillIcon {
+  font-size: 1.5rem;
+  color: #00FFFF; 
+}
+
+
+.skillCard ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.skillCard ul li {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 8px;
+  padding-left: 12px;
+  position: relative;
+}
+
+.skillCard ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #00FFFF;
+}
+
+
+.skillDivider {
+  width: 50px;
+  height: 3px;
+  background: #00FFFF;
+  margin: 15px 0 0 0;
+  border-radius: 2px;
+}
+
+.skillsDivider {
+  width: 80px;
+  height: 4px;
+  background: #00FFFF; 
+  margin: 40px auto 0;
+  border-radius: 2px;
+}
+
+
+
+@media (max-width: 1024px) {
+  .skillCard {
+    width: 240px;
+  }
+  .skillHeader h3 {
+    font-size: 1.2rem;
+  }
+  .skillCard ul li {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skillsContainer {
+    gap: 15px;
+  }
+  .skillCard {
+    width: 180px;
+    padding: 15px;
+  }
+  .skillHeader h3 {
+    font-size: 1rem;
+  }
+  .skillCard ul li {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skillsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .skillCard {
+    width: 90%;
+  }
+  .skillHeader h3 {
+    font-size: 1rem;
+  }
+  .skillCard ul li {
+    font-size: 0.8rem;
+  }
+}
+

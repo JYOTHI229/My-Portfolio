@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap');
+
+/* Projects Section */
+.projects {
+  background-color:transparent;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Title */
+.projects .title {
+  font-size: 2.5rem;
+  color: #FFD700;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+}
+
+/* Container for cards */
+.projectsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Project Card */
+.projectItem {
+  background: #1E1E1E;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  min-width: 280px;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0; /* initially hidden for animation */
+  transform: translateY(30px); /* slide-up effect */
+}
+
+/* Fade-in + slide-up animation */
+.projectItem.animate {
+  animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effect */
+.projectItem:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 255, 255, 0.3);
+}
+
+/* Project Image */
+.projectImageContainer {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.projectImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.projectItem:hover .projectImage {
+  transform: scale(1.05);
+}
+
+/* Project Content */
+.projectContent h3 {
+  font-size: 1.3rem;
+  color: #00FFFF;
+  margin-bottom: 8px;
+}
+
+.projectContent p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+/* Links */
+.projectLinks {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.liveLink, .githubLink {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.liveLink {
+  background: #FFD700;
+  color: #000;
+}
+
+.liveLink:hover {
+  background: #00FFFF;
+  color: #000;
+}
+
+.githubLink {
+  background: #333;
+  color: #FFD700;
+}
+
+.githubLink:hover {
+  background: #00FFFF;
+  color: #000;
+}
+
+/* Divider after projects section */
+.projectsDivider {
+  width: 60px;
+  height: 3px;
+  background: #00FFFF;
+  margin: 40px auto 0;
+  border-radius: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .projectItem {
+    min-width: 240px;
+  }
+  .projectContent h3 {
+    font-size: 1.2rem;
+  }
+  .projectContent p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projectItem {
+    min-width: 220px;
+  }
+  .projectContent h3 {
+    font-size: 1.1rem;
+  }
+  .projectContent p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projectItem {
+    min-width: 200px;
+  }
+  .projectContent h3 {
+    font-size: 1rem;
+  }
+  .projectContent p {
+    font-size: 0.8rem;
+  }
+}

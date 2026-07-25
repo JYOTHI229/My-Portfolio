@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap');
+
+
+.education {
+  background-color:transparent; 
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Title */
+.education .title {
+  font-size: 2.5rem;
+  color: #FFD700;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Container for horizontal layout */
+.education-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Education Item */
+.educationItem {
+  background: #1E1E1E;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.2);
+  display: flex;
+  align-items: center;
+  min-width: 280px;
+  max-width: 300px;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.educationItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 255, 255, 0.3);
+}
+
+/* Icon */
+.educationItemIcon {
+  font-size: 3rem;
+  color: #FFD700;
+  margin-bottom: 15px;
+}
+
+/* Content */
+.educationItemContent h3 {
+  font-size: 1.3rem;
+  color: #00FFFF;
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.educationItemContent p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* Divider */
+.divider {
+  height: 3px;
+  width: 80px;
+  background: #00FFFF;
+  margin: 50px auto 0;
+  border-radius: 2px;
+}
+
+/* Responsive Design - Stack vertically on small screens */
+@media (max-width: 1024px) {
+  .education-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .education-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .education .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .education .title {
+    font-size: 1.8rem;
+  }
+  .educationItemContent h3 {
+    font-size: 1.2rem;
+  }
+  .educationItemContent p {
+    font-size: 0.9rem;
+  }
+}
